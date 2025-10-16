@@ -98,7 +98,7 @@ if not anoms.empty:
     fig.add_scatter(x=anoms["time"], y=anoms[feature_col], mode="markers",
                     marker=dict(size=10, symbol="x"),
                     name="Anomaly")
-st.plotly_chart(fig, width='stretch')
+st.plotly_chart(fig, config={"displayModeBar": False})
 
 # --- Summary ---
 st.subheader("Summary")
@@ -111,7 +111,7 @@ with col3:
     pct = 100 * df["is_anomaly"].mean()
     st.metric("Anomaly %", f"{pct:.2f}%")
 
-st.dataframe(df.tail(20), width='stretch')
+st.dataframe(df.tail(20))
 
 # --- Download annotated CSV ---
 st.subheader("Export")

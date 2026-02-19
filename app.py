@@ -46,7 +46,6 @@ if not {"time", "value"}.issubset(df.columns):
     st.error("CSV must contain 'time' and 'value' columns.")
     st.stop()
 
-# Ensure proper dtypes
 df = df.copy()
 df["time"] = pd.to_datetime(df["time"])
 df = df.sort_values("time").reset_index(drop=True)
@@ -119,6 +118,3 @@ out = df[["time", "value", "is_anomaly", "score"]]
 csv = out.to_csv(index=False).encode("utf-8")
 st.download_button("Download annotated CSV", csv, file_name="anomalies.csv", mime="text/csv")
 
-# --- (Optional) API call placeholder ---
-with st.expander("🔌 Send results to API (demo placeholder)"):
-    st.write("In a real setup, POST `out` to your FastAPI endpoint for storage/reporting.")

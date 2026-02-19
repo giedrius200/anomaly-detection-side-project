@@ -1,6 +1,6 @@
 # Anomaly Monitor
 
-This small Streamlit app helps you detect and explore anomalies in a single time series.
+This small Streamlit app helps detect and explore anomalies in a single time series.
 
 ## What it does
 - Load a CSV with columns `time` and `value` (or use the demo generator).
@@ -10,11 +10,6 @@ This small Streamlit app helps you detect and explore anomalies in a single time
 
 ## Sample CSV
 `sample_data.csv` contains hourly values with a couple of injected spikes you can upload from the app sidebar.
-
-## Why this is useful
-- Quick anomaly exploration: helps spot unusual events in logs, metrics, or sensor data.
-- Baseline for monitoring: lets you compare simple statistical methods quickly before deploying more complex models.
-- Lightweight: runs locally with Streamlit and minimal dependencies.
 
 ## How to run
 ```powershell
@@ -37,3 +32,4 @@ You can name the repository `anomaly-detection-side-project` or pick another nam
 
 ---
 License: MIT
+
